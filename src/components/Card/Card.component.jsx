@@ -13,9 +13,10 @@ export function Card({
   value,
   lastUpdate,
   description = " Number of active cases of COVID-19",
+  ...rest
 }) {
   return (
-    <Grid item component={MCard}>
+    <Grid item component={MCard} xs={12} md={3} {...rest}>
       <CardContent>
         <Typography color="textSecondary" gutterBottom>
           {title}
