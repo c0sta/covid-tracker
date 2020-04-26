@@ -9,3 +9,5 @@ Link: https://www.youtube.com/watch?v=khJlrj3Y6Ls
 
 # Deploy 
 I used Netlify for the deployment because it's very ease, fast to deploy and have a continuos integration with Github repo by default.
+
+Link to app -> https://corona-charts.netlify.app
