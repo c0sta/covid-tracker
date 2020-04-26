@@ -1,7 +1,9 @@
 import React from "react";
 import { Cards, Chart, CountryPicker } from "./components/index";
 import { fetchData } from "./services/api";
-import "./App.module.css";
+import styles from "./App.module.css";
+import logo from "./assets/image.png";
+import cx from "classnames";
 
 function App() {
   const [data, setData] = React.useState({});
@@ -17,6 +19,8 @@ function App() {
   }, []);
 
   const handleCountryChange = async (country) => {
+    if (country === "Global")
+      fetchData().then((data) => console.log("AQUI", data));
     const fetchedData = await fetchData(country);
     setCountry(country);
     setData(fetchedData);
@@ -24,7 +28,8 @@ function App() {
   };
 
   return (
-    <div className="container">
+    <div className={cx(styles.main_container)}>
+      <img src={logo} alt="Covid app logo" />
       <Cards data={data} />
       <CountryPicker handleCountryChange={handleCountryChange} />
       <Chart data={data} />
