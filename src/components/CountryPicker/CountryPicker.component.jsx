@@ -20,7 +20,7 @@ export function CountryPicker({ handleCountryChange }) {
   return (
     <FormControl className={cx(styles.formControl)}>
       <NativeSelect
-        defaultValue="global"
+        defaultValue=""
         onChange={(e) => handleCountryChange(e.target.value)}
       >
         <option value="global"> Global</option>
