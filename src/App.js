@@ -10,21 +10,15 @@ function App() {
   const [country, setCountry] = React.useState("");
 
   React.useEffect(() => {
-    const fetch = () =>
-      fetchData().then(
-        (data) => setData({ ...data, data }) & console.log("App log: ", data)
-      );
+    const fetch = () => fetchData().then((data) => setData({ ...data, data }));
 
     fetch();
   }, []);
 
   const handleCountryChange = async (country) => {
-    if (country === "Global")
-      fetchData().then((data) => console.log("AQUI", data));
     const fetchedData = await fetchData(country);
     setCountry(country);
     setData(fetchedData);
-    console.log(fetchedData);
   };
 
   return (
@@ -32,7 +26,7 @@ function App() {
       <img src={logo} alt="Covid app logo" />
       <Cards data={data} />
       <CountryPicker handleCountryChange={handleCountryChange} />
-      <Chart data={data} />
+      <Chart data={data} country={country} />
     </div>
   );
 }
