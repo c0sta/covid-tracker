@@ -1,6 +1,8 @@
 import React from "react";
 import { NativeSelect, FormControl } from "@material-ui/core";
 import { fetchCountries } from "../../services/api";
+import styles from "./CountryPicker.module.css";
+import cx from "classnames";
 
 export function CountryPicker({ handleCountryChange }) {
   const [fetchedCountries, setFetchedCountries] = React.useState([]);
@@ -16,9 +18,9 @@ export function CountryPicker({ handleCountryChange }) {
   console.log(fetchedCountries);
 
   return (
-    <FormControl>
+    <FormControl className={cx(styles.formControl)}>
       <NativeSelect
-        defaultValue=""
+        defaultValue="global"
         onChange={(e) => handleCountryChange(e.target.value)}
       >
         <option value="global"> Global</option>
