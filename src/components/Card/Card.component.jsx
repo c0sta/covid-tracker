@@ -7,7 +7,8 @@ import {
 } from "@material-ui/core";
 import "./Card.module.css";
 import CountUp from "react-countup";
-
+import cx from "classnames";
+import styles from "./Card.module.css";
 export function Card({
   title,
   value,
@@ -16,8 +17,15 @@ export function Card({
   ...rest
 }) {
   return (
-    <Grid item component={MCard} xs={12} md={3} {...rest}>
-      <CardContent>
+    <Grid
+      item
+      component={MCard}
+      xs={12}
+      md={3}
+      className={cx(styles.container)}
+      {...rest}
+    >
+      <CardContent className={cx(styles.card)}>
         <Typography color="textSecondary" gutterBottom>
           {title}
         </Typography>
