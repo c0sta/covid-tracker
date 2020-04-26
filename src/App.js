@@ -23,7 +23,7 @@ function App() {
 
   return (
     <div className={cx(styles.main_container)}>
-      <img src={logo} alt="Covid app logo" />
+      <img src={logo} alt="Covid app logo" className={cx(styles.image)} />
       <Cards data={data} />
       <CountryPicker handleCountryChange={handleCountryChange} />
       <Chart data={data} country={country} />
