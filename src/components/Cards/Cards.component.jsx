@@ -5,7 +5,7 @@ import styles from "./Cards.module.css";
 import cx from "classnames";
 
 export function Cards({ data: { confirmed, recovered, deaths, lastUpdate } }) {
-  console.log(confirmed);
+  // console.log(confirmed);
   if (!confirmed) {
     return "Loading...";
   }

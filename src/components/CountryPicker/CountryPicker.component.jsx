@@ -15,7 +15,7 @@ export function CountryPicker({ handleCountryChange }) {
     fetchAPI();
   }, [setFetchedCountries]);
 
-  console.log(fetchedCountries);
+  // console.log(fetchedCountries);
 
   return (
     <FormControl className={cx(styles.formControl)}>
