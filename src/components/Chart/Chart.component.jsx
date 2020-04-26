@@ -1,9 +1,8 @@
 import React from "react";
 import { fetchDailyData } from "../../services/api";
-import { Line } from "react-chartjs-2";
+import { Line, Bar } from "react-chartjs-2";
 import styles from "./Chart.module.css";
-import cx from "classnames";
-export function Chart(props) {
+export function Chart({ data: { confirmed, recovered, deaths }, country }) {
   const [dailyData, setDailyData] = React.useState([]);
 
   React.useEffect(() => {
@@ -34,11 +33,35 @@ export function Chart(props) {
           },
         ],
       }}
-      className={cx(styles.chart)}
+    />
+  ) : null;
+  console.log(confirmed, recovered, deaths);
+  const barChart = confirmed ? (
+    <Bar
+      data={{
+        labels: ["Infected", "Recovered", "Deaths"],
+        datasets: [
+          {
+            label: "People",
+            backgroundColor: [
+              "rgba(0, 255, 0, 0.5)",
+              "rgba(255, 0, 0, 0.5)",
+              "rgba(255, 0, 0, 0.5)",
+            ],
+            data: [confirmed.value, recovered.value, deaths.value],
+          },
+        ],
+      }}
+      options={{
+        legend: { display: true },
+        title: { display: true, text: `Current state in ${country}` },
+      }}
     />
   ) : null;
 
-  return <div className={styles.container}>{lineChart}</div>;
+  return (
+    <div className={styles.container}>{country ? barChart : lineChart}</div>
+  );
 }
 
 Chart.propTypes = {};
