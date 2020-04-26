@@ -7,6 +7,9 @@
 I did this project following the tutorial on the JavaScript Mastery channel
 Link: https://www.youtube.com/watch?v=khJlrj3Y6Ls
 
+# API
+API used: https://covid19.mathdro.id/api 
+
 # Deploy 
 I used Netlify for the deployment because it's very ease, fast to deploy and have a continuos integration with Github repo by default.
 
