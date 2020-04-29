@@ -4,7 +4,7 @@
 
 # Source
 
-I did this project following the tutorial on the JavaScript Mastery channel
+Did this project following the tutorial on the JavaScript Mastery channel
 Link: https://www.youtube.com/watch?v=khJlrj3Y6Ls
 
 # API
